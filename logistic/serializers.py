@@ -5,7 +5,7 @@ class ProductSerializer(serializers.ModelSerializer):
     # настройте сериализатор для продукта
     pass
 
-
+ 
 class ProductPositionSerializer(serializers.ModelSerializer):
     # настройте сериализатор для позиции продукта на складе
     pass

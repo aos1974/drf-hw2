@@ -22,6 +22,8 @@ class ProductInline(admin.TabularInline):
 class StockAdmin(admin.ModelAdmin):
     list_display = ['id', 'address']
     list_display_links = ['id', 'address']
+    list_filter = ['id', 'address']
+    search_fields = ['products__title']
     inlines = [ProductInline,]
 
 @admin.register(StockProduct)

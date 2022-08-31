@@ -55,7 +55,14 @@ class StockSerializer(serializers.ModelSerializer):
         # с помощью списка positions
 
         for pos in positions:
-            StockProduct.objects.filter(stock=stock, product=pos.get('product')).update(quantity=pos.get('quantity'),
-            price=pos.get('price'))
+                  
+            obj, created = StockProduct.objects.update_or_create(
+                    stock=stock, 
+                    product=pos.get('product'),
+                    defaults={
+                        'quantity': pos.get('quantity'), 
+                        'price': pos.get('price'), 
+                    },
+                )
 
         return stock

@@ -27,7 +27,4 @@ class StockViewSet(ModelViewSet):
     search_fields = ['address', 'products__title']
     pagination_class = LimitOffsetPagination 
 
-    # def search_products(self, *args):
-    #     pass
-    #     super().search(*args)
     
